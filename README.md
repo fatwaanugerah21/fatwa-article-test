@@ -59,6 +59,8 @@ I'm using blocs for state management because it's common knowledge that blocs sc
 
 I don't apply optimistic update behaviour, because the spec specifies to show the loading -> error | loading -> success, so I just make the loading indicator appear clearly, not hidden under optimistic UI update.
 
+I also don't write the domain logic even though it's a good behavior and one of clean architecture key parts, but it's unnecessary at this point. same reason as I don't write screens
+
 What I would add, or change, is the article_save_unsave_bloc. Currently, it's tied to ArticleCard, but when the code becomes bigger, and another widgets want to use saved articles information like "Amount of saved on SavedArticles nav icon button" we could move the bloc higher
 
 # Demo screenshot
