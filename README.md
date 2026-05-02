@@ -9,38 +9,38 @@ Author {
   address: string  
   nickname: string
 
-  createdAt: Timestamp
-  updatedAt: Timestamp
-  UNIQUE (name, dateOfBirth, nickname)
-}
+  createdAt: Timestamp   
+  updatedAt: Timestamp   
+  UNIQUE (name, dateOfBirth, nickname)  
+}  
 Note: address could change, but nickname does not
 
-Article {
-  id: UUIDV7 primary key
-  author: Reference
-  title: string
-  preview: string
-
-  createdAt: Timestamp, default now()
-  updatedAt: Timestamp
-  deletedAt: Timestamp
+Article {    
+  id: UUIDV7 primary key    
+  author: Reference    
+  title: string   
+  preview: string   
+  
+  createdAt: Timestamp, default now()   
+  updatedAt: Timestamp    
+  deletedAt: Timestamp    
 }
 
-User {
-  id: UUIDV7 primary key
-  name: string
-  username: string unique
-  password: string
-
-  createdAt: Timestamp default now()
-  updatedAt: Timestamp
+User {   
+  id: UUIDV7 primary key   
+  name: string   
+  username: string unique   
+  password: string   
+   
+  createdAt: Timestamp default now()   
+  updatedAt: Timestamp  
 }
 
-SaveArticle {
-  id: UUIV7 primary key
-  userId: Reference from User
-  articleId: Reference from Article
-  savedAt: Timestamp, default now()
+SaveArticle {  
+  id: UUIV7 primary key   
+  userId: Reference from User    
+  articleId: Reference from Article    
+  savedAt: Timestamp, default now()    
 }
 
 For saving article: POST /articles/{articledId}/saves We're gonna get the userId from the authorization token And then save it to SaveArticle by combining the userId and articleId,
