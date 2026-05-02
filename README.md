@@ -63,4 +63,4 @@ What I would add, or change, is the article_save_unsave_bloc. Currently, it's ti
 
 # Demo screenshot
 
-![Demo](./demo.jpg)# fatwa-article-test
+![Demo](./demo.jpg)
